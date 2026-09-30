@@ -316,19 +316,31 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mobileMenuButton) {
     mobileMenuButton.addEventListener("click", toggleMenu);
   }
+  // ==============================
+  // BOTÕES DE QUANTIDADE
+  // ==============================
 
-  // Botões de diminuir quantidade
-  document.querySelectorAll(".quantity-minus").forEach((button) => {
-    button.addEventListener("click", () => {
-      changeQuantity(button, -1);
-    });
-  });
+  document.querySelectorAll(".quantity").forEach((quantityContainer) => {
+    const buttons = quantityContainer.querySelectorAll("button");
 
-  // Botões de aumentar quantidade
-  document.querySelectorAll(".quantity-plus").forEach((button) => {
-    button.addEventListener("click", () => {
-      changeQuantity(button, 1);
-    });
+    const minusButton = buttons[0];
+    const plusButton = buttons[1];
+
+    if (minusButton) {
+      minusButton.removeAttribute("onclick");
+
+      minusButton.addEventListener("click", () => {
+        changeQuantity(minusButton, -1);
+      });
+    }
+
+    if (plusButton) {
+      plusButton.removeAttribute("onclick");
+
+      plusButton.addEventListener("click", () => {
+        changeQuantity(plusButton, 1);
+      });
+    }
   });
 
   // Adicionar produtos

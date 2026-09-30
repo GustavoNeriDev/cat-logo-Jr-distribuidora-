@@ -123,9 +123,9 @@ img {
   background:
     linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.30) 0%,
-      rgba(255, 255, 255, 0.16) 48%,
-      rgba(255, 255, 225, 0.06) 100%
+      rgba(255, 255, 255, 0.20) 0%,
+      rgba(255, 255, 255, 0.8) 48%,
+      rgba(255, 255, 225, 0.01) 100%
     ),
     url(imagens/WhatsApp\ Image\ 2026-09-30\ at\ 19.39.13.jpeg);
   background-color: var(--blue-deep);

@@ -46,20 +46,8 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  
+  background: linear-gradient(90deg, #0064b7, #008ee5);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
-
-  background: 
-  linear-gradient(
-    90deg,
-    rgba(0, 100, 183, 0.90),
-    rgba(0, 142, 229, 0.90)
-  ),
-  url(imagens/WhatsApp\ Image\ 2026-09-30\ at\ 18.56.17.jpeg);
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .header-inner {
@@ -139,7 +127,7 @@ img {
       rgba(0, 107, 190, 0.85) 48%,
       rgba(0, 137, 220, 0.35) 100%
     ),
-    url("https://picsum.photos/id/1015/1920/1080");
+    url("imagens/WhatsApp\ Image\ 2026-09-30\ at\ 18.56.17.jpeg");
 
   background-color: var(--blue-deep);
   background-size: cover;

@@ -1,38 +1,33 @@
-/* ==============================
-   MENU MOBILE
-============================== */
+// ==============================
+// MENU MOBILE
+// ==============================
 
 function toggleMenu() {
   const menu = document.getElementById("mobileMenu");
-
   menu.classList.toggle("open");
 }
 
-/* ==============================
-   WHATSAPP
-============================== */
+// ==============================
+// WHATSAPP
+// ==============================
 
 function openWhatsApp() {
   const phone = "5579996075263";
-
   const message = "Olá! Gostaria de fazer um pedido.";
-
   const url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
   window.open(url, "_blank");
 }
 
-/* ==============================
-   QUANTIDADE
-============================== */
+// ==============================
+// QUANTIDADE
+// ==============================
 
 function changeQuantity(button, value) {
   const container = button.closest(".quantity");
-
   const number = container.querySelector("span");
 
   let quantity = parseInt(number.textContent);
-
   quantity += value;
 
   if (quantity < 1) {
@@ -42,14 +37,14 @@ function changeQuantity(button, value) {
   number.textContent = quantity;
 }
 
-/* ==============================
-   CARRINHO
-============================== */
+// ==============================
+// CARRINHO
+// ==============================
 
 let cart = [];
 
-function addProduct(name, price) {
-  const productCard = event.target.closest(".product-card");
+function addProduct(name, price, button) {
+  const productCard = button.closest(".product-card");
 
   const quantity = parseInt(
     productCard.querySelector(".quantity span").textContent,
@@ -72,21 +67,19 @@ function updateCart() {
   document.getElementById("cartCount").textContent = count;
 }
 
-/* ==============================
-   MOSTRAR CARRINHO
-============================== */
+// ==============================
+// MOSTRAR CARRINHO
+// ==============================
 
 function showCart() {
   if (cart.length === 0) {
     alert("Seu carrinho está vazio.");
-
     return;
   }
 
   renderCartSummary();
 
   document.getElementById("cartOverlay").classList.add("open");
-
   document.getElementById("cartModal").classList.add("open");
 
   document.body.style.overflow = "hidden";
@@ -94,7 +87,6 @@ function showCart() {
 
 function closeCart() {
   document.getElementById("cartOverlay").classList.remove("open");
-
   document.getElementById("cartModal").classList.remove("open");
 
   document.body.style.overflow = "";
@@ -102,7 +94,6 @@ function closeCart() {
 
 function renderCartSummary() {
   let html = "";
-
   let total = 0;
 
   cart.forEach((product) => {
@@ -110,7 +101,14 @@ function renderCartSummary() {
 
     total += subtotal;
 
-    html += `<div class="cart-line"><span>${product.quantity}x ${product.name}</span><strong>R$ ${subtotal.toFixed(2).replace(".", ",")}</strong></div>`;
+    html += `
+      <div class="cart-line">
+        <span>${product.quantity}x ${product.name}</span>
+        <strong>
+          R$ ${subtotal.toFixed(2).replace(".", ",")}
+        </strong>
+      </div>
+    `;
   });
 
   document.getElementById("cartSummary").innerHTML = html;
@@ -119,9 +117,12 @@ function renderCartSummary() {
     "R$ " + total.toFixed(2).replace(".", ",");
 }
 
+// ==============================
+// FINALIZAR PEDIDO WHATSAPP
+// ==============================
+
 function checkoutWhatsApp() {
   const name = document.getElementById("clientName").value.trim();
-
   const location = document.getElementById("clientLocation").value.trim();
 
   const pagamento = document.getElementById("clientPagamento").value.trim();
@@ -130,7 +131,7 @@ function checkoutWhatsApp() {
 
   const note = document.getElementById("clientNote").value.trim();
 
-  if (name === "" || location === "") {
+  if (name === "" || location === "" || pagamento === "") {
     if (name === "") {
       document.getElementById("clientName").classList.add("field-error");
     }
@@ -150,7 +151,6 @@ function checkoutWhatsApp() {
 
   if (cart.length === 0) {
     alert("Seu carrinho está vazio.");
-
     return;
   }
 
@@ -175,10 +175,8 @@ function checkoutWhatsApp() {
   let message = "*NOVO PEDIDO - JR DISTRIBUIDORA*\n\n";
 
   message += "Cliente: " + name + "\n";
-
   message += "Localização: " + location + "\n";
-
-  message += "Pagamento " + pagamento + "\n";
+  message += "Pagamento: " + pagamento + "\n";
 
   if (reference !== "") {
     message += "Referência: " + reference + "\n";
@@ -206,7 +204,7 @@ function checkoutWhatsApp() {
       "\n";
   });
 
-  message += "\nTotal: R$ " + total.toFixed(2).replace(".", ",") + "";
+  message += "\nTotal: R$ " + total.toFixed(2).replace(".", ",");
 
   const phone = "5579996075263";
 
@@ -218,15 +216,14 @@ function checkoutWhatsApp() {
   cart = [];
 
   updateCart();
-
   closeCart();
 
   showNotification("Pedido enviado com sucesso!");
 }
 
-/* ==============================
-   FECHAR CARRINHO COM ESC
-============================== */
+// ==============================
+// FECHAR CARRINHO COM ESC
+// ==============================
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -234,15 +231,23 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-["clientName", "clientLocation"].forEach((id) => {
-  document.getElementById(id).addEventListener("input", function () {
-    this.classList.remove("field-error");
-  });
+// ==============================
+// REMOVER ERRO DOS CAMPOS
+// ==============================
+
+["clientName", "clientLocation", "clientPagamento"].forEach((id) => {
+  const field = document.getElementById(id);
+
+  if (field) {
+    field.addEventListener("input", function () {
+      this.classList.remove("field-error");
+    });
+  }
 });
 
-/* ==============================
-   NOTIFICAÇÃO
-============================== */
+// ==============================
+// NOTIFICAÇÃO
+// ==============================
 
 function showNotification(message) {
   const notification = document.createElement("div");
@@ -250,34 +255,22 @@ function showNotification(message) {
   notification.textContent = message;
 
   notification.style.position = "fixed";
-
   notification.style.bottom = "95px";
-
   notification.style.left = "50%";
-
   notification.style.transform = "translateX(-50%)";
-
   notification.style.background = "#006fc1";
-
   notification.style.color = "white";
-
   notification.style.padding = "14px 24px";
-
   notification.style.borderRadius = "30px";
-
   notification.style.fontSize = "12px";
-
   notification.style.fontWeight = "700";
-
   notification.style.zIndex = "5000";
-
   notification.style.boxShadow = "0 10px 30px rgba(0,0,0,.25)";
 
   document.body.appendChild(notification);
 
   setTimeout(() => {
     notification.style.opacity = "0";
-
     notification.style.transition = ".4s";
 
     setTimeout(() => {
@@ -286,9 +279,9 @@ function showNotification(message) {
   }, 2200);
 }
 
-/* ==============================
-   FAQ
-============================== */
+// ==============================
+// FAQ
+// ==============================
 
 function toggleFaq(button) {
   const item = button.closest(".faq-item");
@@ -306,48 +299,133 @@ function toggleFaq(button) {
 
 function openAllFaqs() {
   const allItems = document.querySelectorAll(".faq-item");
+
   allItems.forEach((item) => {
     item.classList.add("active");
   });
 }
 
-/* ==============================
-   FECHAR MENU AO CLICAR
-============================== */
+// ==============================
+// EVENTOS
+// ==============================
 
-document.querySelectorAll(".mobile-menu a").forEach((link) => {
-  link.addEventListener("click", () => {
-    document.getElementById("mobileMenu").classList.remove("open");
+document.addEventListener("DOMContentLoaded", () => {
+  // Menu mobile
+  const mobileMenuButton = document.getElementById("mobileMenuButton");
+
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener("click", toggleMenu);
+  }
+
+  // Botões de diminuir quantidade
+  document.querySelectorAll(".quantity-minus").forEach((button) => {
+    button.addEventListener("click", () => {
+      changeQuantity(button, -1);
+    });
   });
-});
 
-/* ==============================
-   ANIMAÇÃO DOS PRODUTOS
-============================== */
+  // Botões de aumentar quantidade
+  document.querySelectorAll(".quantity-plus").forEach((button) => {
+    button.addEventListener("click", () => {
+      changeQuantity(button, 1);
+    });
+  });
 
-const cards = document.querySelectorAll(".product-card");
+  // Adicionar produtos
+  document.querySelectorAll(".add-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const name = button.dataset.product;
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
+      const price = Number(button.dataset.price);
 
-        entry.target.style.transform = "translateY(0)";
+      addProduct(name, price, button);
+    });
+  });
+
+  // FAQ
+  document.querySelectorAll(".faq-toggle").forEach((button) => {
+    button.addEventListener("click", () => {
+      toggleFaq(button);
+    });
+  });
+
+  // Abrir todas as perguntas
+  const allFaqButton = document.getElementById("openAllFaqs");
+
+  if (allFaqButton) {
+    allFaqButton.addEventListener("click", openAllFaqs);
+  }
+
+  // Carrinho flutuante
+  const cartFloating = document.getElementById("cartFloating");
+
+  if (cartFloating) {
+    cartFloating.addEventListener("click", showCart);
+
+    cartFloating.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        showCart();
       }
     });
-  },
-  {
-    threshold: 0.1,
-  },
-);
+  }
 
-cards.forEach((card) => {
-  card.style.opacity = "0";
+  // Overlay do carrinho
+  const cartOverlay = document.getElementById("cartOverlay");
 
-  card.style.transform = "translateY(20px)";
+  if (cartOverlay) {
+    cartOverlay.addEventListener("click", closeCart);
+  }
 
-  card.style.transition = "opacity .5s ease, transform .5s ease";
+  // Botão fechar carrinho
+  const cartModalClose = document.getElementById("cartModalClose");
 
-  observer.observe(card);
+  if (cartModalClose) {
+    cartModalClose.addEventListener("click", closeCart);
+  }
+
+  // Botão finalizar pedido
+  const checkoutButton = document.getElementById("checkoutWhatsApp");
+
+  if (checkoutButton) {
+    checkoutButton.addEventListener("click", checkoutWhatsApp);
+  }
+
+  // Fechar menu ao clicar em um link
+  document.querySelectorAll(".mobile-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.remove("open");
+    });
+  });
+
+  // ==============================
+  // ANIMAÇÃO DOS PRODUTOS
+  // ==============================
+
+  const cards = document.querySelectorAll(".product-card");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = "1";
+
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    },
+  );
+
+  cards.forEach((card) => {
+    card.style.opacity = "0";
+
+    card.style.transform = "translateY(20px)";
+
+    card.style.transition = "opacity .5s ease, transform .5s ease";
+
+    observer.observe(card);
+  });
 });

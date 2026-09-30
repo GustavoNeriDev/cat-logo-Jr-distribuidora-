@@ -42,7 +42,7 @@
           <a href="#produtos"> PEDIR AGORA </a>
         </button>
 
-        <button class="mobile-menu-button" onclick="toggleMenu()">
+        <button class="mobile-menu-button" id="mobileMenuButton">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -233,7 +233,12 @@
               <button onclick="changeQuantity(this, 1)">+</button>
             </div>
 
-            <button class="add-button" onclick="addProduct('Galão', 10)">
+            <button
+              class="add-button"
+              data-product="Galão"
+              data-price="10"
+              type="button"
+            >
               ADICIONAR
             </button>
           </article>
@@ -264,7 +269,9 @@
 
             <button
               class="add-button"
-              onclick="addProduct('Galão Kit completo 20L', 30)"
+              data-product="Galão Kit completo 20L"
+              data-price="30"
+              type="button"
             >
               ADICIONAR
             </button>
@@ -293,7 +300,9 @@
 
             <button
               class="add-button"
-              onclick="addProduct('Água mineral Lev-12Uni, 500ML', 9)"
+              data-product="Água mineral Lev-12Uni, 500ML"
+              data-price="9"
+              type="button"
             >
               ADICIONAR
             </button>
@@ -322,7 +331,9 @@
 
             <button
               class="add-button"
-              onclick="addProduct('Água Mineral 500ml-1/6Uni', 11)"
+              data-product="Água Mineral 500ml-1/6Uni"
+              data-price="11"
+              type="button"
             >
               ADICIONAR
             </button>
@@ -351,7 +362,9 @@
 
             <button
               class="add-button"
-              onclick="addProduct('Gás Ultragaz', 120)"
+              data-product="Gás Ultragaz"
+              data-price="120"
+              type="button"
             >
               ADICIONAR
             </button>
@@ -378,7 +391,12 @@
               <button onclick="changeQuantity(this, 1)">+</button>
             </div>
 
-            <button class="add-button" onclick="addProduct('Galão 10L', 6)">
+            <button
+              class="add-button"
+              data-product="Galão 10L"
+              data-price="6"
+              type="button"
+            >
               ADICIONAR
             </button>
           </article>
@@ -409,7 +427,9 @@
 
             <button
               class="add-button"
-              onclick="addProduct('Galão Kit 10L', 22)"
+              data-product="Galão Kit 10L"
+              data-price="22"
+              type="button"
             >
               ADICIONAR
             </button>
@@ -438,7 +458,9 @@
 
             <button
               class="add-button"
-              onclick="addProduct('Caixa copo-200ML, 48Uni', 30)"
+              data-product="Caixa copo-200ML, 48Uni"
+              data-price="30"
+              type="button"
             >
               ADICIONAR
             </button>
@@ -465,7 +487,12 @@
               <button onclick="changeQuantity(this, 1)">+</button>
             </div>
 
-            <button class="add-button" onclick="addProduct('Copo 300ML', 32)">
+            <button
+              class="add-button"
+              data-product="Copo 300ML"
+              data-price="32"
+              type="button"
+            >
               ADICIONAR
             </button>
           </article>
@@ -489,7 +516,12 @@
               <button onclick="changeQuantity(this, 1)">+</button>
             </div>
 
-            <button class="add-button" onclick="addProduct('Água com gás', 22)">
+            <button
+              class="add-button"
+              data-product="Água com gás"
+              data-price="22"
+              type="button"
+            >
               ADICIONAR
             </button>
           </article>
@@ -522,7 +554,7 @@
           <h2>Tire suas dúvidas</h2>
 
           <div class="faq-item">
-            <button onclick="toggleFaq(this)">
+            <button class="faq-toggle" type="button">
               Qual o horário de atendimento?
               <i class="fa-solid fa-chevron-down"></i>
             </button>
@@ -534,7 +566,7 @@
           </div>
 
           <div class="faq-item">
-            <button onclick="toggleFaq(this)">
+            <button class="faq-toggle" type="button">
               Vocês fazem entrega em todos os bairros?
               <i class="fa-solid fa-chevron-down"></i>
             </button>
@@ -545,7 +577,7 @@
           </div>
 
           <div class="faq-item">
-            <button onclick="toggleFaq(this)">
+            <button class="faq-toggle" type="button">
               Como funciona o pagamento?
               <i class="fa-solid fa-chevron-down"></i>
             </button>
@@ -557,7 +589,7 @@
           </div>
 
           <div class="faq-item">
-            <button onclick="toggleFaq(this)">
+            <button class="faq-toggle" type="button">
               Em quanto tempo a entrega é feita?
               <i class="fa-solid fa-chevron-down"></i>
             </button>
@@ -567,7 +599,7 @@
             </div>
           </div>
 
-          <button class="white-button" onclick="openAllFaqs()">
+          <button class="white-button" id="openAllFaqs" type="button">
             VER TODAS AS DÚVIDAS
           </button>
         </div>
@@ -693,7 +725,7 @@
 
     <!-- CARRINHO FLUTUANTE -->
 
-    <div class="cart-floating" id="cartFloating" onclick="showCart()">
+    <div class="cart-floating" id="cartFloating" role="button" tabindex="0">
       <i class="fa-solid fa-cart-shopping"></i>
 
       <span id="cartCount"> 0 </span>
@@ -701,7 +733,7 @@
 
     <!-- MODAL DO CARRINHO -->
 
-    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-overlay" id="cartOverlay"></div>
 
     <div class="cart-modal" id="cartModal">
       <div class="cart-modal-header">
@@ -709,7 +741,7 @@
 
         <button
           class="cart-modal-close"
-          onclick="closeCart()"
+          id="cartModalClose"
           aria-label="Fechar carrinho"
         >
           ×
@@ -772,7 +804,7 @@
           <strong id="cartTotal">R$ 0,00</strong>
         </div>
 
-        <button class="cart-send" onclick="checkoutWhatsApp()">
+        <button class="cart-send" id="checkoutWhatsApp" type="button">
           <i class="fa-brands fa-whatsapp"></i>
 
           ENVIAR PEDIDO

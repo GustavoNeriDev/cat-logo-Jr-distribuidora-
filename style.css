@@ -46,8 +46,16 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(90deg, #0064b7, #008ee5);
+  
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+
+  background: 
+  linear-gradient(
+    90deg,
+    rgba(0, 100, 183, 0.90),
+    rgba(0, 142, 229, 0.90)
+  ),
+  url(imagens/);
 }
 
 .header-inner {

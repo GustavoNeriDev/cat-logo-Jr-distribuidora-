@@ -1323,6 +1323,7 @@ footer {
   .footer-inner {
     flex-direction: column;
     padding: 25px 0;
+    color: white;
   }
 
   .cart-floating {

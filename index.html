@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>JR Distribuidora - Disque Gás e Água Mineral</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <img src="imagens/logo.jpeg" alt="JR Distribuidora" />
+        </a>
+
+        <nav class="desktop-menu">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#produtos">Catálogo</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <button class="order-button">
+          <i class="fa-brands fa-whatsapp"></i>
+          <a href="#produtos"> PEDIR AGORA </a>
+        </button>
+
+        <button class="mobile-menu-button" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Catálogo</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+
+      <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <div class="hero-text">
+            <span class="section-label"> ÁGUA MINERAL E GÁS </span>
+
+            <h1>
+              Qualidade e<br />
+              praticidade no<br />
+              <em>seu dia a dia!</em>
+            </h1>
+
+            <p>
+              Na JR Distribuidora você encontra água mineral de qualidade e gás
+              com entrega rápida e segura em toda a região.
+            </p>
+
+            <button class="whatsapp-button">
+              <i class="fa-brands fa-whatsapp"></i>
+              <a href="#produtos"> PEDIR AGORA </a>
+            </button>
+          </div>
+
+          <div class="hero-products">
+            <img
+              src="imagens/garrafao-10L-removebg-preview.png"
+              alt="Água mineral"
+              class="hero-water"
+            />
+
+            <img
+              src="imagens/gaz-ultragaz-removebg-preview.png"
+              alt="Gás"
+              class="hero-gas"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- BENEFÍCIOS -->
+
+      <section class="benefits">
+        <div class="benefit">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-truck"></i>
+          </div>
+
+          <div>
+            <strong>Entrega rápida</strong>
+            <span>e segura</span>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+
+          <div>
+            <strong>Produtos</strong>
+            <span>de qualidade</span>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <div>
+            <strong>Atendimento</strong>
+            <span>personalizado</span>
+          </div>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">
+            <i class="fa-regular fa-credit-card"></i>
+          </div>
+
+          <div>
+            <strong>Pagamento</strong>
+            <span>facilitado</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOBRE -->
+
+      <section class="about" id="sobre">
+        <div class="about-image">
+          <img src="imagens/premio.jpeg" alt="JR Distribuidora" />
+        </div>
+
+        <div class="about-content">
+          <span class="section-label blue"> SOBRE NÓS </span>
+
+          <h2>
+            JR Distribuidora<br />
+            Disque Gás e Água Mineral
+          </h2>
+
+          <p>
+            Trabalhamos com a venda e entrega de água mineral e gás de cozinha,
+            sempre com foco na qualidade, satisfação dos nossos clientes. Fomos
+            os destaques do ano de Simão Dias - SE.
+          </p>
+
+          <div class="about-features">
+            <div>
+              <i class="fa-solid fa-shield"></i>
+              <span>
+                <strong>Qualidade</strong>
+                garantida
+              </span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-headset"></i>
+              <span>
+                <strong>Atendimento</strong>
+                rápido
+              </span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-medal"></i>
+              <span>
+                <strong>Tradição e</strong>
+                confiança
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUTOS -->
+
+      <section class="products-section" id="produtos">
+        <div class="section-heading">
+          <span class="section-label blue"> NOSSO CATÁLOGO </span>
+
+          <h2>Produtos</h2>
+
+          <p>
+            Escolha o que precisa e adicione ao seu carrinho. Quanto mais você
+            leva, mais prático fica!
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <!-- PRODUTO 1 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imagens/garrafao-20L.jpeg" alt="Água Mineral 20L" />
+            </div>
+
+            <h3>Galão 20L</h3>
+
+            <span class="product-type"> (sem gás) </span>
+
+            <strong class="price"> R$ 10,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button class="add-button" onclick="addProduct('Galão', 10)">
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 2 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="imagens/garrafao-completo-20L.jpeg"
+                alt="Água Mineral 20L"
+              />
+            </div>
+
+            <h3>Galão Kit completo 20L</h3>
+
+            <span class="product-type"> (galão retornável) </span>
+
+            <strong class="price"> R$ 30,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button
+              class="add-button"
+              onclick="addProduct('Galão Kit completo 20L', 30)"
+            >
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 3 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imagens/agua-12U-500ML.jpeg" alt="Água Mineral 500ML" />
+            </div>
+
+            <h3>Água Mineral 12Uni-500ML</h3>
+
+            <span class="product-type"> (pet) </span>
+
+            <strong class="price"> R$ 9,00</strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button
+              class="add-button"
+              onclick="addProduct('Água mineral Lev-12Uni, 500ML', 9)"
+            >
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 4 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imagens/agua-12U-500ML.jpeg" alt="Água Mineral 500ml" />
+            </div>
+
+            <h3>Água Mineral Lev pacote com 1/6 unidades 500ml</h3>
+
+            <span class="product-type"> (pet) </span>
+
+            <strong class="price"> R$ 11,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button
+              class="add-button"
+              onclick="addProduct('Água Mineral 500ml-1/6Uni', 11)"
+            >
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 5 -->
+
+          <article class="product-card">
+            <div class="product-image gas-image">
+              <img src="imagens/gaz-ultragaz.jpeg" alt="Gás Ultragaz" />
+            </div>
+
+            <h3>Gás Ultragaz</h3>
+
+            <span class="product-type"> &nbsp; </span>
+
+            <strong class="price"> R$ 120,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button
+              class="add-button"
+              onclick="addProduct('Gás Ultragaz', 120)"
+            >
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 6 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imagens/garrafao-10L.jpeg" alt="galão 10L" />
+            </div>
+
+            <h3>Garrafão 10L</h3>
+
+            <span class="product-type"> &nbsp; </span>
+
+            <strong class="price"> R$ 6,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button class="add-button" onclick="addProduct('Galão 10L', 6)">
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 7 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img
+                src="imagens/garrafao-10L.jpeg"
+                alt="Galão Kit completo 10L"
+              />
+            </div>
+
+            <h3>Galão Kit completo Lev-10L</h3>
+
+            <span class="product-type"> &nbsp; </span>
+
+            <strong class="price"> R$ 22,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button
+              class="add-button"
+              onclick="addProduct('Galão Kit 10L', 22)"
+            >
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 8 -->
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="imagens/copo-200ML-48U.jpeg" alt="caixa copo 200ML" />
+            </div>
+
+            <h3>Caixa-copo de 200ML-48 unidades</h3>
+
+            <span class="product-type"> &nbsp; </span>
+
+            <strong class="price"> R$ 30,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button
+              class="add-button"
+              onclick="addProduct('Caixa copo-200ML, 48Uni', 30)"
+            >
+              ADICIONAR
+            </button>
+          </article>
+
+          <!-- PRODUTO 9 -->
+
+          <article class="product-card">
+            <div class="product-image gas-image">
+              <img src="imagens/copo-300ML-48U.jpeg" alt="copo" />
+            </div>
+
+            <h3>Caixa Copo 300ML-48 Unidades</h3>
+
+            <span class="product-type"> &nbsp; </span>
+
+            <strong class="price"> R$ 32,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button class="add-button" onclick="addProduct('Copo 300ML', 32)">
+              ADICIONAR
+            </button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image gas-image">
+              <img src="imagens/aguacomgas.jpeg" alt="agua com gas" />
+            </div>
+
+            <h3>Água com gás</h3>
+
+            <span class="product-type"> &nbsp; </span>
+
+            <strong class="price"> R$ 32,00 </strong>
+
+            <div class="quantity">
+              <button onclick="changeQuantity(this, -1)">−</button>
+
+              <span>1</span>
+
+              <button onclick="changeQuantity(this, 1)">+</button>
+            </div>
+
+            <button class="add-button" onclick="addProduct('Água com gás', 32)">
+              ADICIONAR
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- DEPOIMENTOS + DÚVIDAS -->
+
+      <section class="blue-section">
+        <div class="testimonial" id="depoimentos">
+          <span class="section-label white"> DEPOIMENTOS </span>
+
+          <h2>O que nossos clientes dizem</h2>
+
+          <div class="quote">“</div>
+
+          <p>
+            “Sempre sou bem atendida, entrega rápida e produtos de excelente
+            qualidade! Recomendo a JR Distribuidora!”
+          </p>
+
+          <strong> — Cliente Anônimmo </strong>
+
+          <div class="stars">★★★★★</div>
+        </div>
+
+        <div class="faq" id="duvidas">
+          <span class="section-label white"> DÚVIDAS FREQUENTES </span>
+
+          <h2>Tire suas dúvidas</h2>
+
+          <div class="faq-item">
+            <button onclick="toggleFaq(this)">
+              Qual o horário de atendimento?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="faq-answer">
+              Nosso atendimento funciona de segunda a sábado, em horário
+              comercial.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button onclick="toggleFaq(this)">
+              Vocês fazem entrega em todos os bairros?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="faq-answer">
+              Consulte nossa área de entrega pelo WhatsApp.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button onclick="toggleFaq(this)">
+              Como funciona o pagamento?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="faq-answer">
+              Trabalhamos com Pix, cartão e outras formas de pagamento
+              disponíveis.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button onclick="toggleFaq(this)">
+              Em quanto tempo a entrega é feita?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="faq-answer">
+              O prazo depende da região e da demanda do momento.
+            </div>
+          </div>
+
+          <button class="white-button" onclick="openAllFaqs()">
+            VER TODAS AS DÚVIDAS
+          </button>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+
+      <section class="contact" id="contato">
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+            <small> NOSSA LOCALIZAÇÃO </small>
+
+            <strong> Av. Arnaldo Chagas Silva, 599 </strong>
+
+            <span> Simão Dias - SE </span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+
+          <div>
+            <small> FALE CONOSCO </small>
+
+            <strong> (79) 99607-5263 </strong>
+
+            <span> (WhatsApp) </span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-regular fa-clock"></i>
+
+          <div>
+            <small> HORÁRIO DE ATENDIMENTO </small>
+
+            <strong> Segunda a Sábado </strong>
+
+            <span> 07h às 19h </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGAMENTOS -->
+
+      <section class="payments">
+        <span> FORMAS DE PAGAMENTO </span>
+
+        <div class="payment-icons">
+          <img
+            src="https://img.icons8.com/color/96/pix.png"
+            alt="Pix"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="https://img.icons8.com/color/96/visa.png"
+            alt="Visa"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <img
+            src="https://img.icons8.com/color/96/mastercard.png"
+            alt="Mastercard"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <strong class="payment-badge badge-elo">elo</strong>
+
+          <img
+            src="https://img.icons8.com/color/96/amex.png"
+            alt="American Express"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <strong class="payment-badge badge-hipercard">Hipercard</strong>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="footer-inner">
+        <img
+          src="imagens/logo.jpeg"
+          alt="JR Distribuidora"
+          class="footer-logo"
+        />
+
+        <div class="footer-contact">
+          <i class="fa-brands fa-whatsapp"></i>
+          (79) 99607-5263
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://www.instagram.com/jr_distribuidorasd21?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw=="
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#produtos">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2025 JR Distribuidora. Todos os direitos reservados.
+
+        <a href="politica-de-privacidade.html" target="_self"
+          >Politica de Privacidade</a
+        >
+      </div>
+    </footer>
+
+    <!-- CARRINHO FLUTUANTE -->
+
+    <div class="cart-floating" id="cartFloating" onclick="showCart()">
+      <i class="fa-solid fa-cart-shopping"></i>
+
+      <span id="cartCount"> 0 </span>
+    </div>
+
+    <!-- MODAL DO CARRINHO -->
+
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <div class="cart-modal" id="cartModal">
+      <div class="cart-modal-header">
+        <h3><i class="fa-solid fa-cart-shopping"></i> SEU PEDIDO</h3>
+
+        <button
+          class="cart-modal-close"
+          onclick="closeCart()"
+          aria-label="Fechar carrinho"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="cart-modal-body">
+        <div class="cart-summary" id="cartSummary"></div>
+        <div class="politica">
+          <p>
+            Seus dados serão gerenciado e enviados para o pedido via WhatsApp.
+            para saber mais, clique em
+            <a href="politica-de-privacidade.html" target="_self"
+              >politica de Privacidade.</a
+            >
+          </p>
+        </div>
+        <div class="cart-form">
+          <label for="clientName">SEU NOME *</label>
+
+          <input type="text" id="clientName" placeholder="Ex: Maria Souza" />
+
+          <label for="clientLocation">LOCALIZAÇÃO *</label>
+
+          <input
+            type="text"
+            id="clientLocation"
+            placeholder="Ex: Rua das Flores, 25 - Centro"
+          />
+
+          <label for="clientPagamento">FORMA DE PAGAMENTO *</label>
+          <input
+            type="text"
+            id="clientPagamento"
+            placeholder="Ex: Pix, Cartão Ou Especie, qual cartão"
+          />
+
+          <label for="clientReference">PONTO DE REFERÊNCIA (opcional)</label>
+
+          <input
+            type="text"
+            id="clientReference"
+            placeholder="Ex: perto da igreja / mercado X"
+          />
+
+          <label for="clientNote">OBSERVAÇÃO (opcional)</label>
+
+          <textarea
+            id="clientNote"
+            rows="2"
+            placeholder="Ex: preciso de troco para R$ 50"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="cart-modal-footer">
+        <div class="cart-total-row">
+          <span>TOTAL</span>
+
+          <strong id="cartTotal">R$ 0,00</strong>
+        </div>
+
+        <button class="cart-send" onclick="checkoutWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i>
+
+          ENVIAR PEDIDO
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
